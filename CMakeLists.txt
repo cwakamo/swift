@@ -461,6 +461,10 @@ option(SWIFT_ENABLE_GLOBAL_ISEL_ARM64
   "Enable global isel on arm64"
   FALSE)
 
+option(SWIFT_BUILD_COMPILERLIB
+  "Build the libSwiftCompiler library"
+  TRUE)
+
 cmake_dependent_option(SWIFT_BUILD_SYNTAXPARSERLIB
   "Build the Swift Syntax Parser library" TRUE
   "SWIFT_ENABLE_DISPATCH" FALSE)

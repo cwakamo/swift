@@ -1,0 +1,4 @@
+module SwiftCompiler {
+  umbrella "."
+  link "SwiftCompiler"
+}
