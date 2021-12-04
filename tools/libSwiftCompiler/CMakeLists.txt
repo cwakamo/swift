@@ -7,18 +7,9 @@ add_swift_host_library(libSwiftCompiler SHARED
   libSwiftCompiler.cpp
   c-include-check.c)
 
-if(${SWIFT_HOST_VARIANT_SDK} IN_LIST SWIFT_DARWIN_PLATFORMS)
-  # Workaround for a linker crash related to autolinking: rdar://77839981
-  set_property(TARGET libSwiftCompiler APPEND_STRING PROPERTY
-               LINK_FLAGS " -lobjc ")
-endif()
-
-# add_dependencies(libSwiftCompiler
-#   clang
-#   swiftDependencyScan)
-
 target_link_libraries(libSwiftCompiler PRIVATE
-    swiftDriverTool
+    swiftDriver
+    swiftFrontendTool
     libswiftStub)
 
 set_target_properties(libSwiftCompiler
